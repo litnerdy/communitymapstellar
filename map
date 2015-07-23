@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <style>
+      h2   {color:deepskyblue}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body p {
+            font-style: regular;
+            font-weight: 300;
+        }
+        
+      #map-canvas {
+        width: 8,000;
+        height: 90vh;
+        background-color: #CCC;
+      }
+    </style>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+
+// Create the  map
+function initialize() {
+    var mapCanvas = document.getElementById('map-canvas');
+    var mapOptions = {
+        center: new google.maps.LatLng(34.553127, 18.048012),
+        zoom: 3,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+   
+   
+   
+    // begin marker: cryptpark
+    
+    var cryptparkcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading"><a href="http://cryptpark.com/groups/stellar/">CryptPark</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>A Japanese community for digital currency lovers</p>'+
+        '</div>'+
+        '</div>';
+
+
+    var cryptparkinfowindow = new google.maps.InfoWindow({
+        content: cryptparkcontent
+    });
+    
+    var cryptpark = new google.maps.Marker({
+        position: new google.maps.LatLng(35.652832, 139.839478
+),
+        'map': map,
+        title: 'CryptPark'
+    });
+    
+    google.maps.event.addListener(cryptpark, 'click', function() {
+    cryptparkinfowindow.open(map,cryptpark);
+  });
+
+    // end marker: cryptpark
+    
+    // begin marker: slack
+    
+    var slackcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="http://slack.stellar.org/">Slack Chat</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>International real-time chat in English, Vietnamese, and Chinese. Includes channels for developers, business, learning, and financial inclusion.</p>'+
+        '</div>'+
+        '</div>';
+
+    var slackinfowindow = new google.maps.InfoWindow({
+        content: slackcontent
+    });
+    
+     var slack = new google.maps.Marker({
+        position: new google.maps.LatLng(37.0000, -120.0000),
+        map: map,
+        title: 'Slack Chat'
+    });
+
+    
+    google.maps.event.addListener(slack, 'click', function() {
+    slackinfowindow.open(map,slack);
+    });
+
+    // end marker: slack
+
+    // begin marker: qq group
+    
+    var qqgroupcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="http://w.qq.com/">QQ Group</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>Chinese Stellar QQ Group. Group number: 275158187</p>'+
+        '</div>'+
+        '</div>';
+
+    var qqgroupinfowindow = new google.maps.InfoWindow({
+        content: qqgroupcontent
+    });
+    
+ 
+    var qqgroup = new google.maps.Marker({
+        position: new google.maps.LatLng(30.935539, 105.405640),
+        map: map,
+        title: 'QQ Group'
+    });
+    
+    google.maps.event.addListener(qqgroup, 'click', function() {
+    qqgroupinfowindow.open(map,qqgroup);
+    });
+
+    // end marker: qq group
+
+
+
+    // begin marker: indonesia fb
+    
+    var indonesiafbcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="https://www.facebook.com/groups/PemburuStellar/">Pemburu Stellar Indonesia</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>Indonesian Facebook Group for Stellar fans</p>'+
+        '</div>'+
+        '</div>';
+
+    var indonesiafbinfowindow = new google.maps.InfoWindow({
+        content: indonesiafbcontent
+    });
+    
+ 
+    var indonesiafb = new google.maps.Marker({
+        position: new google.maps.LatLng(0.534889, 114.447838),
+        map: map,
+        title: 'Pemburu Stellar'
+    });
+    
+    google.maps.event.addListener(indonesiafb, 'click', function() {
+indonesiafbinfowindow.open(map,indonesiafb);
+    });
+
+    // end marker: indonesiafb
+
+
+    // begin marker: vumi
+    
+    var vumicontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="http://www.takepart.com/article/2015/03/14/mobile-savings-accounts-vumi">Vumi</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>Mobile savings for young girls in South Africa, developed by the Praekelt Foundation</p>'+
+        '</div>'+
+        '</div>';
+
+    var vumiinfowindow = new google.maps.InfoWindow({
+        content: vumicontent
+    });
+    
+ 
+    var vumi = new google.maps.Marker({
+        position: new google.maps.LatLng(-26.195246, 28.034088),
+        map: map,
+        title: 'Vumi'
+    });
+
+    
+    google.maps.event.addListener(vumi, 'click', function() {
+vumiinfowindow.open(map,vumi);
+    });
+
+    // end marker: vumi
+
+    // begin marker: reveal
+    
+    var revealcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="https://reveal.me/">Reveal</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>A social network where users can earn "Reveal Coin" for their popular posts</p>'+
+        '</div>'+
+        '</div>';
+
+    var revealinfowindow = new google.maps.InfoWindow({
+        content: revealcontent
+    });
+    
+ 
+    var reveal = new google.maps.Marker({
+        position: new google.maps.LatLng(37.733795, -122.446747),
+        map: map,
+        title: 'Reveal'
+    });
+
+    
+    google.maps.event.addListener(reveal, 'click', function() {
+revealinfowindow.open(map,reveal);
+    });
+
+    // end marker: reveal
+    
+    // begin marker: oradian
+    
+    var oradiancontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="http://blogs.wsj.com/moneybeat/2015/02/28/bitbeat-stellar-takes-a-step-into-the-microfinance-world/">Oradian</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>Software that connects microfinance institutions in Nigeria</p>'+
+        '</div>'+
+        '</div>';
+
+    var oradianinfowindow = new google.maps.InfoWindow({
+        content: oradiancontent
+    });
+    
+ 
+    var oradian = new google.maps.Marker({
+        position: new google.maps.LatLng(6.465422, 3.406448),
+        map: map,
+        title: 'Oradian'
+    });
+    
+    google.maps.event.addListener(oradian, 'click', function() {
+oradianinfowindow.open(map,oradian);
+    });
+
+    // end marker: oradian
+
+    // begin marker: lobstr
+    
+    var lobstrcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="https://lobstr.co/">Lobstr</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>User friendly Stellar wallet for Android, iOS, and desktop. You can save "favorite" contacts and payments, and create new wallets straight from the app.</p>'+
+        '</div>'+
+        '</div>';
+
+    var lobstrinfowindow = new google.maps.InfoWindow({
+        content: lobstrcontent
+    });
+    
+ 
+      var lobstr = new google.maps.Marker({
+        position: new google.maps.LatLng(53.905045, 27.556259),
+        map: map,
+        title: 'Lobstr.co'
+    });
+
+    google.maps.event.addListener(lobstr, 'click', function() {
+lobstrinfowindow.open(map,lobstr);
+    });
+
+    // end marker: lobstr
+    
+    // begin marker: pokerth
+    
+    var pokerthcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="https://github.com/sacarlson/pokerth_accounting">Pokerth Accounting</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>The first p2p poker system</p>'+
+        '</div>'+
+        '</div>';
+
+    var pokerthinfowindow = new google.maps.InfoWindow({
+        content: pokerthcontent
+    });
+    
+    var pokerth = new google.maps.Marker({
+        position: new google.maps.LatLng(13.736717, 100.523186),
+        map: map,
+        title: 'Pokerth Accounting'
+    });
+
+    google.maps.event.addListener(pokerth, 'click', function() {
+pokerthinfowindow.open(map,pokerth);
+    });
+
+    // end marker: pokerth
+
+
+    // begin marker: strmoon
+    
+    var strmooncontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="http://256kw.com/">256kw</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>Chinese educational and news blog about Stellar</p>'+
+        '</div>'+
+        '</div>';
+
+    var strmooninfowindow = new google.maps.InfoWindow({
+        content: strmooncontent
+    });
+    
+    var strmoon = new google.maps.Marker({
+        position: new google.maps.LatLng(34.402393, 94.154785),
+        map: map,
+        title: '256kw'
+    });
+
+
+    google.maps.event.addListener(strmoon, 'click', function() {
+strmooninfowindow.open(map,strmoon);
+    });
+
+    // end marker: strmoon
+    
+    // begin marker: vcbear
+    
+    var vcbearcontent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+       '<h1 id="firstHeading" class="firstHeading"><a href="https://www.vcbear.net/">VCBear</a></h1>'+
+        '<div id="bodyContent">'+
+        '<p>Japanese Stellar gateway and educational blog about digital money</p>'+
+        '</div>'+
+        '</div>';
+
+    var vcbearinfowindow = new google.maps.InfoWindow({
+        content: vcbearcontent
+    });
+    
+
+      var vcbear = new google.maps.Marker({
+        position: new google.maps.LatLng(35.640278, 137.694763),
+        map: map,
+        title: 'VCBear'
+    });
+
+
+
+    google.maps.event.addListener(vcbear, 'click', function() {
+vcbearinfowindow.open(map,vcbear);
+    });
+
+    // end marker: vcbear
+
+}
+     
+// add listening event
+google.maps.event.addDomListener(window, 'load', initialize);
+    
+</script>
+
+  </head>
+  <body>
+  <h2>Around the World with Stellar</h2>
+  <p>Find your Stellar community anywhere on earth</p>
+    <div id="map-canvas"></div>
+  </body>
+</html>
